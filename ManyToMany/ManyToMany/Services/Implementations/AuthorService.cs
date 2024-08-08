@@ -24,4 +24,9 @@ public class AuthorService : IAuthorService
     {
         return await _context.Authors.ToListAsync();
     }
+
+    public void Test()
+    {
+        Console.WriteLine("test");
+    }
 }

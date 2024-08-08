@@ -21,6 +21,6 @@ public class CustomerService : ICustomerService
 
     public async Task<List<Customer>> GetAllCustomersAsync()
     {
-        return await _context.Customers.Include(c => c.Sales).ThenInclude(s => s.Book).ToListAsync();
+        return await _context.Customers.Include(c => c.Sales).ThenInclude(s => s.Book).ThenInclude(b => b.Author).ToListAsync();
     }
 }
